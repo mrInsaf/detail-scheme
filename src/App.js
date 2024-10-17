@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import DetailCanvas from './DetailCanvas';
+import EdgeInput from './EdgeInput';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [edges, setEdges] = useState([{ length: 100, angle: 0 }]); // стартовая грань
+
+  const handleEdgeChange = (index, key, value) => {
+    const updatedEdges = [...edges];
+    updatedEdges[index][key] = value;
+    setEdges(updatedEdges);
+  };
+
+  const addEdge = () => {
+    setEdges([...edges, { length: 100, angle: 0 }]); // добавляем новую грань с начальными параметрами
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="canvas">
+        <DetailCanvas edges={edges} />
+      </div>
+      <div className="controls">
+        {edges.map((edge, index) => (
+          <EdgeInput
+            key={index}
+            index={index}
+            length={edge.length}
+            angle={edge.angle}
+            onChange={handleEdgeChange}
+          />
+        ))}
+        <button onClick={addEdge}>Add Edge</button>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
