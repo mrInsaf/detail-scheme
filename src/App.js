@@ -37,7 +37,7 @@ const App = () => {
             onDelete={() => removeEdge(index)}
           />
         ))}
-        <button onClick={addEdge}>Add Edge</button>
+        <button onClick={addEdge}>Добавить грань</button>
       </div>
     </div>
   );

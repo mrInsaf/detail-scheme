@@ -6,9 +6,9 @@ const EdgeInput = ({ index, length, angle, onChange, onDelete }) => {
 
   return (
     <div className="edge-input">
-      <h3>Edge {index + 1}</h3>
+      <h3>Грань {index + 1}</h3>
       <label>
-        Length: 
+        Длина: 
         <input
           type="number"
           value={length}
@@ -16,7 +16,7 @@ const EdgeInput = ({ index, length, angle, onChange, onDelete }) => {
         />
       </label>
       <label>
-        Angle: 
+        Угол: 
         <input
           type="number"
           value={angle}
