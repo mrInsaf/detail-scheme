@@ -20,8 +20,15 @@
 
 .edge-input {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   gap: 5px;
+  border: 1px solid;
+}
+
+.edge-input label {
+  margin-right: 5px;
 }
 
 button {

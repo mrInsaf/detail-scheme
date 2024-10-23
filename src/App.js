@@ -4,7 +4,12 @@ import EdgeInput from './EdgeInput';
 import './App.css';
 
 const App = () => {
-  const [edges, setEdges] = useState([{ length: 100, angle: 0 }]); // стартовая грань
+  const [edges, setEdges] = useState([{ length: 0, angle: 0 }]); // стартовая грань
+
+  const removeEdge = (index) => {
+    const updatedEdges = edges.filter((_, i) => i !== index);
+    setEdges(updatedEdges);
+  };
 
   const handleEdgeChange = (index, key, value) => {
     const updatedEdges = [...edges];
@@ -13,7 +18,7 @@ const App = () => {
   };
 
   const addEdge = () => {
-    setEdges([...edges, { length: 100, angle: 0 }]); // добавляем новую грань с начальными параметрами
+    setEdges([...edges, { length: 0, angle: 0 }]); // добавляем новую грань с начальными параметрами
   };
 
   return (
@@ -29,6 +34,7 @@ const App = () => {
             length={edge.length}
             angle={edge.angle}
             onChange={handleEdgeChange}
+            onDelete={() => removeEdge(index)}
           />
         ))}
         <button onClick={addEdge}>Add Edge</button>
