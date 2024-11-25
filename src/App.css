@@ -1,21 +1,36 @@
 /* App.css */
 .app {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
   height: 100vh;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.content-container {
+  display: grid;
+  padding-top: 40px;
+  grid-template-columns: 1fr 3fr 2fr; /* Три колонки */
+  /* gap: 20px; Расстояние между колонками */
+}
+
+.order-info {
+  /* border: 2px dashed #dc3545; Красная граница */
+  padding: 10px;
 }
 
 .canvas {
+  /* border: 2px dashed #007bff; Синяя граница */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .controls {
+  /* border: 2px dashed #fb00ff; Синяя граница */
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .edge-input {
@@ -24,7 +39,10 @@
   justify-content: space-evenly;
   align-items: center;
   gap: 5px;
-  border: 1px solid;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 8px;
+  border: 1px solid lightgray;
 }
 
 .edge-input label {
@@ -43,3 +61,5 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+

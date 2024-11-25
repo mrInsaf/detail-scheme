@@ -63,7 +63,8 @@ const DetailCanvas = ({ edges }) => {
       // Добавляем текст на середине линии
       const textX = (currentX + newX) / 2; // Находим среднюю точку для текста
       const textY = (currentY + newY) / 2; // Находим среднюю точку для текста
-      const offset = 20;
+      const offset = 10;
+      const offsetX = offset * Math.cos(rad + Math.PI/2); // Смещение по Y в перпендикулярном направлении
       const offsetY = offset * Math.sin(rad + Math.PI/2); // Смещение по Y в перпендикулярном направлении
 
       if (length !== 0) {
@@ -104,7 +105,7 @@ const DetailCanvas = ({ edges }) => {
     <svg
       width="400"
       height="400"
-      style={{ border: '1px solid black' }}
+      style={{ border: '1px solid lightgray' }}
       viewBox={viewBox} // Используем динамический viewBox
     >
       {renderEdges()}

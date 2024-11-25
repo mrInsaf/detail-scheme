@@ -16,7 +16,7 @@ const EdgeInput = ({ index, length, angle, onChange, onDelete }) => {
         />
       </label>
       <label>
-        Угол: 
+        Угол следующей грани: 
         <input
           type="number"
           value={angle}
